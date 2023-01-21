@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../style/application-styles.css">
     <title>Application Page</title>
 </head>
-<body id="background2">
-<div class="container" id="background2">
+<body class="background2">
+<div class="container background2">
     <br>
-    <div class="row" id="background1">
+    <div class="row background1">
 
 
             <br>
@@ -67,7 +67,7 @@
             </form>
         </div>
     </div>
-</div>
+
 
 
 

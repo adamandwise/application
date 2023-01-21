@@ -1,3 +1,9 @@
+<!--
+Adam Wise
+SDEV 328 Full Stack Development
+1.21.23
+Job Application1
+-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +17,7 @@
 
 
 <?php
+    // creating variables in php to vardump my form
     $name = $_POST['name'];
     $email = $_POST['email'];
     $dob = $_POST['dob'];

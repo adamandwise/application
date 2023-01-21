@@ -27,17 +27,20 @@ button{
     border-radius: 4px;
 }
 
-#background1{
-    background-color: #d1f0f1;
+/*created a few styles to change the background colors of my site*/
+.background1{
+    background-color: #ee6d4f;
 }
-#background2{
-    background-color: rgba(7, 7, 7, 0.04);
+.background2{
+    background-color: rgba(224, 194, 194, 0.2);
 }
-
+/*made a class to round out the edges of my images*/
 img.round_corners{
     border-radius: 30px;
 }
-
+/*
+a style the italicizes my blockquote tag
+*/
 blockquote{
     font-style:italic;
     text-indent: -0.45em;
