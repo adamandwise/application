@@ -23,12 +23,22 @@ li a:hover {
     background-color: #111;
 }
 button{
-    float:right;
+
+    border-radius: 4px;
 }
 
 #background1{
-    background-color: lavenderblush;
+    background-color: #d1f0f1;
 }
 #background2{
-    background-color: wheat;
+    background-color: rgba(7, 7, 7, 0.04);
+}
+
+img.round_corners{
+    border-radius: 30px;
+}
+
+blockquote{
+    font-style:italic;
+    text-indent: -0.45em;
 }

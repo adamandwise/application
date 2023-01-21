@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="../style/application-styles.css">
     <title>Application Page</title>
 </head>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-8">
+<body id="background2">
+<div class="container" id="background2">
+    <br>
+    <div class="row" id="background1">
 
 
+            <br>
+        <br>
             <h1>Junior Software Development Engineer in Test</h1>
             <h3>For Hot Tub Time Machines</h3>
             <form action="submit.php" method="post">
@@ -22,31 +24,31 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email">
+                    <input name="email" type="email" class="form-control" id="email">
                 </div>
                 <div class="form-group">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" class="form-control" id="dob">
+                    <input name="dob" type="date" class="form-control" id="dob">
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
-                    <input type="text" class="form-control" id="address">
+                    <input name="address" type="text" class="form-control" id="address">
                 </div>
                 <div class="form-group">
                     <label for="city">City:</label>
-                    <input type="text" class="form-control" id="city">
+                    <input name="city" type="text" class="form-control" id="city">
                 </div>
                 <div class="form-group">
                     <label for="state">State:</label>
-                    <input type="text" class="form-control" id="state">
+                    <input name="state" type="text" class="form-control" id="state">
                 </div>
                 <div class="form-group">
                     <label for="zip">Zip Code:</label>
-                    <input type="text" class="form-control" id="zip">
+                    <input name="zip" type="text" class="form-control" id="zip">
                 </div>
                 <div class="form-group">
                     <label for="sex">Sex:</label>
-                    <select class="form-control" id="sex">
+                    <select name="sex" class="form-control" id="sex">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
@@ -54,13 +56,14 @@
                 </div>
                 <div class="form-group">
                     <label for="resume">Upload Resume:</label>
-                    <input type="file" class="form-control-file" id="resume">
+                    <input name="resume" type="file" class="form-control-file" id="resume">
                 </div>
                 <div class="form-group">
                     <label for="coverLetter">Cover Letter:</label>
-                    <textarea class="form-control" id="coverLetter" rows="5"></textarea>
+                    <textarea name="coverLetter" class="form-control" id="coverLetter" rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary ">Submit</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
             </form>
         </div>
     </div>
