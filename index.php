@@ -21,16 +21,16 @@ $f3 = Base::instance();
 $f3 -> route('GET /', function(){
     //instantiate a view
     $view = new Template();
-
     echo $view -> render('views/home.html');
 });
 
 $f3 -> route('GET /app', function(){
     //instantiate a view
     $view = new Template();
-
-    echo $view -> render('views/application.php');
+    echo $view -> render('views/application.html');
 });
+
+
 
 //run fat free
 $f3->run();
