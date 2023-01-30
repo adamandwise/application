@@ -50,3 +50,44 @@ blockquote{
 #rightSlam{
     float:right;
 }
+
+.marginsNote{
+    margin-top:20px;
+    background-color: lightgrey;
+    padding:100px;
+}
+
+
+
+.parentDiv{
+    position: relative;
+}
+
+.childDiv{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+img{
+    width:100%;
+    height:auto;
+}
+
+@media (max-width: 800px) {
+    img {
+        width: 100%;
+        float: none;
+        display: block;
+    }
+}
+
+.button-stretch{
+    width:100%;
+    padding:0;
+    margin:0;
+    position: absolute;
+    bottom: 0;
+}

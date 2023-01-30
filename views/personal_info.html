@@ -8,31 +8,77 @@
             <h6>Junior Software Development Engineer in Test</h6>
             <p>Secret Underground Lab, Straight of Gibraltar, Paid 12 Weeks</p>
         </div>
-        <div class="col">
-            <br>
-            <br>
-            <a id="rightSlam" role="button" class="btn btn-primary" id="myButton"
-               href="app">Apply Now!</a
-        </div>
+
     </div>
     <div class="row" >
         <div class="col-12">
             <ul>
                 <li><a class="active" href="home">Hot Tub Time Machine Co.</a></li>
-                <li><a href="personal_info.html">Apply Now</a></li>
+                <li><a href="personal_info">Apply Now</a></li>
             </ul>
         </div>
     </div>
     <div class="row background2">
-            <div class="col-6 text-center">
+            <div  class="row">
+                <h3>Personal Information</h3>
+                <hr>
+                <div class="col-8">
+                    <form action="submit.php" method="post">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="fname">First Name:</label>
+                                    <input name="fname" type="text" class="form-control" id="fname">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="lname">Last Name:</label>
+                                    <input name="lname" type="text" class="form-control" id="lname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input name="email" type="email" class="form-control" id="email">
+                                </div>
+                            </div>
+                        </div>
 
-                <br>
-                <br>
-                <a role="button" class="btn btn-primary" id="myButton"
-                   href="experience">Next</a>
-                <br>
-                <br>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="state">State:</label>
+                                    <input name="state" type="text" class="form-control" id="state">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="phone">Phone:</label>
+                                    <input name="phone" type="phone" class="form-control" id="phone">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <p class="marginsNote"><b>Note:</b> All information entered is protected by our <b>privacy pollicy</b>.
+                            Profile information can only be viewed by others with your permission.
+                        </p>
 
+                    </div>
+
+
+                    <div class="row">
+
+                    <a role="button" class="btn btn-primary  button-stretch " id="myButton"
+                       href="experience">Next</a>
+                    </div>
+                        </div>
             </div>
+        </div>
     </div>
 </div>
