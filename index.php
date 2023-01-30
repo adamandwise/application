@@ -24,12 +24,30 @@ $f3 -> route('GET /', function(){
     echo $view -> render('views/home.html');
 });
 
-$f3 -> route('GET /app', function(){
+
+$f3 -> route('GET /personal_info', function(){
     //instantiate a view
     $view = new Template();
-    echo $view -> render('views/application.html');
+    echo $view -> render('views/personal_info.html');
 });
 
+$f3 -> route('GET /home', function(){
+    //instantiate a view
+    $view = new Template();
+    echo $view -> render('views/home.html');
+});
+
+$f3 -> route('GET /experience', function(){
+    //instantiate a view
+    $view = new Template();
+    echo $view -> render('views/experience.html');
+});
+
+$f3 -> route('GET /mailing_list', function(){
+    //instantiate a view
+    $view = new Template();
+    echo $view -> render('views/mailing_list.html');
+});
 
 
 //run fat free
