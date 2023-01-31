@@ -1,5 +1,5 @@
 <include href="views/header.html"></include>
-
+<body>
 <div class="container-fluid" >
     <div class="row background2">
         <div class="col">
@@ -14,20 +14,66 @@
         <div class="col-12">
             <ul>
                 <li><a class="active" href="home">Hot Tub Time Machine Co.</a></li>
-                <li><a href="personal_info.html">Apply Now</a></li>
+                <li><a href="personal_info">Apply Now</a></li>
             </ul>
         </div>
     </div>
     <div class="row background2">
-        <div class="col-6 text-center">
-
-            <br>
-            <br>
-            <a role="button" class="btn btn-primary" id="myButton"
-               href="mailing_list">Next</a>
-            <br>
-            <br>
-
+        <div  class="row">
+            <h3>Experience</h3>
+            <hr>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-8">
+                <label for="bio"><h6><b>Biography</b></h6></label>
+                <br>
+                <input name="bio" type="textarea" class="form-control" id="bio">
+            </div>
+            <div class="col-4">
+                <label for="gitHub"><h6><b>Github Link</b></h6></label>
+                <br>
+                <input name="gitHub" type="url" class="form-control" id="gitHub" value="github.com/my_github">
+                <p></p>
+
+                <label><h6><b>Years Experience</b></h6></label>
+                <br>
+                <div id="radio-group">
+
+                    <input name="radio-group" type="radio"  id="0-2" value="0-2">
+
+                    <label for="0-2">&nbsp;0-2&nbsp;&nbsp;</label>
+
+
+                    <input name="radio-group" type="radio"  id="2-4" value="2-4">
+                    <label for="2-4">&nbsp;2-4&nbsp;&nbsp;</label>
+
+
+                    <input name="radio-group" type="radio"  id="4+"  value="4+">
+                    <label for="4+">&nbsp;4+&nbsp;&nbsp;</label>
+                </div>
+                <p></p>
+                <label><h6><b>Willing To Relocate</b></h6></label>
+                <br>
+                <div id="radio-group">
+
+                    <input name="radio-group" type="radio"  id="yes" value="Yes">
+
+                    <label for="yes">&nbsp;Yes&nbsp;&nbsp;</label>
+
+
+                    <input name="radio-group" type="radio"  id="no" value="No">
+                    <label for="no">&nbsp;No&nbsp;&nbsp;</label>
+
+
+                    <input name="radio-group" type="radio"  id="maybe"  value="Maybe">
+                    <label for="maybe">&nbsp;Maybe&nbsp;&nbsp;</label>
+                </div>
+                <div class="form-group">
+                    <label></label>
+
+                    <a role="button" class="btn btn-primary" id="myButton"
+                       href="mailing_list"> Next > </a>
+                </div>
+            </div>
 </div>
+</body>
