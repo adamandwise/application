@@ -52,9 +52,10 @@ blockquote{
 }
 
 .marginsNote{
-    margin-top:20px;
+
     background-color: lightgrey;
-    padding:100px;
+    margin:auto;
+    padding:30px;
 }
 
 
@@ -88,6 +89,26 @@ img{
     width:100%;
     padding:0;
     margin:0;
-    position: absolute;
-    bottom: 0;
+
+}
+
+#myButton{
+
+    display:block;
+    background-color: indianred;
+    width:100%;
+}
+
+#bio{
+    width:100%;
+    height:89%;
+}
+
+#radio-group {
+    display: flex;
+    flex-direction: row;
+}
+
+#radio-group input[type="radio"] {
+
 }
