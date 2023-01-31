@@ -4,5 +4,5 @@ SDEV 328 Full Stack Development
 Job Application1
 -->
 document.getElementById("myButton").addEventListener("click", function(){
-    window.location.href = "views/application.php";
+    window.location.href = "views/application.html";
 });
