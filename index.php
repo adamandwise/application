@@ -62,24 +62,7 @@ $f3 -> route('GET|POST /experience', function($f3){
 $f3 -> route('GET|POST /mailing_list', function($f3){
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $_SESSION['javascript'] = $_POST['javascript'];
-        $_SESSION['mail[]'] = $_POST['mail[]'];
-        $_SESSION['php'] = $_POST['php'];
-        $_SESSION['java'] = $_POST['java'];
-        $_SESSION['python'] = $_POST['python'];
-        $_SESSION['html'] = $_POST['html'];
-        $_SESSION['CSS'] = $_POST['CSS'];
-        $_SESSION['ReactJs'] = $_POST['ReactJs'];
-        $_SESSION['NodeJs'] = $_POST['NodeJs'];
-
-        $_SESSION['saas'] = $_POST['saas'];
-        $_SESSION['health'] = $_POST['health'];
-        $_SESSION['agtech'] = $_POST['agtech'];
-        $_SESSION['hrtech'] = $_POST['hrtech'];
-        $_SESSION['indtech'] = $_POST['indtech'];
-        $_SESSION['cyber'] = $_POST['cyber'];
-
-
+        $_SESSION['mail'] = implode(". ", $_POST['mail']);
         //redirect to summary page
         $f3->reroute('summary');
     }
