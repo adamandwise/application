@@ -1,7 +1,7 @@
 <include href="views/header.html"></include>
 <body>
 <div class="container-fluid" >
-    <div class="row background2">
+    <div class="row">
         <div class="col">
             <br>
             <h6>Hot Tub Time Machines Co.</h6>
@@ -10,21 +10,18 @@
         </div>
 
     </div>
-    <div class="row" >
-        <div class="col-12">
-            <ul>
-                <li><a class="active" href="home">Hot Tub Time Machine Co.</a></li>
-                <li><a href="personal_info">Apply Now</a></li>
-            </ul>
-        </div>
-    </div>
     <div class="row background2">
+        <br>
+        <br>
         <div  class="row">
+            <p></p>
+            <p></p>
             <h3>Experience</h3>
             <hr>
         </div>
         <div class="row">
             <div class="col-8">
+                <form action="#" method="post">
                 <label for="bio"><h6><b>Biography</b></h6></label>
                 <br>
                 <input name="bio" type="textarea" class="form-control" id="bio">
@@ -32,7 +29,7 @@
             <div class="col-4">
                 <label for="gitHub"><h6><b>Github Link</b></h6></label>
                 <br>
-                <input name="gitHub" type="url" class="form-control" id="gitHub" value="github.com/my_github">
+                <input name="gitHub" type="text" class="form-control" id="gitHub" value="github.com/my_github">
                 <p></p>
 
                 <label><h6><b>Years Experience</b></h6></label>
@@ -56,24 +53,25 @@
                 <br>
                 <div id="radio-group">
 
-                    <input name="radio-group" type="radio"  id="yes" value="Yes">
+                    <input name="relocate" type="radio"  id="yes" value="Yes">
 
                     <label for="yes">&nbsp;Yes&nbsp;&nbsp;</label>
 
 
-                    <input name="radio-group" type="radio"  id="no" value="No">
+                    <input name="relocate" type="radio"  id="no" value="No">
                     <label for="no">&nbsp;No&nbsp;&nbsp;</label>
 
 
-                    <input name="radio-group" type="radio"  id="maybe"  value="Maybe">
+                    <input name="relocate" type="radio"  id="maybe"  value="Maybe">
                     <label for="maybe">&nbsp;Maybe&nbsp;&nbsp;</label>
                 </div>
                 <div class="form-group">
                     <label></label>
 
-                    <a role="button" class="btn btn-primary" id="myButton"
-                       href="mailing_list"> Next > </a>
+
+                    <button class="btn btn-primary" id="myButton" type="submit">Next</button>
                 </div>
             </div>
+            </form>
 </div>
 </body>
