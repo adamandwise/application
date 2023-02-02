@@ -63,6 +63,7 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['javascript'] = $_POST['javascript'];
+        $_SESSION['mail[]'] = $_POST['mail[]'];
         $_SESSION['php'] = $_POST['php'];
         $_SESSION['java'] = $_POST['java'];
         $_SESSION['python'] = $_POST['python'];
