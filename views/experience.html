@@ -1,33 +1,32 @@
 <include href="views/header.html"></include>
-<body>
-<div class="container-fluid" >
-
     <div class="row background2">
-        <br>
-        <br>
         <div  class="row">
-            <p></p>
-            <p></p>
-            <h3>Experience</h3>
-            <hr>
+            <div class="col">
+                <p></p>
+                <p></p>
+                <h3>Experience</h3>
+                <hr>
+            </div>
         </div>
+        <form action="#" method="post">
         <div class="row">
+
             <div class="col-8">
-                <form action="#" method="post">
                 <label for="bio"><h6><b>Biography</b></h6></label>
-                <br>
-                    <textarea id="bio" name="bio" class="form-control h-100"></textarea>
+                <textarea id="bio" name="bio"></textarea>
             </div>
 
+
+
             <div class="col-4">
-                <label for="gitHub"><h6><b>Github Link</b></h6></label>>
+                <label for="gitHub"><h6><b>Github Link</b></h6></label>
                 <br>
                 <input name="gitHub" type="text" class="form-control" id="gitHub" value="github.com/my_github">
                 <p></p>
 
                 <label><h6><b>Years Experience</b></h6></label>
                 <br>
-                <div id="radio-group">
+                <div class="radio-group">
 
                     <input name="radio-group" type="radio"  id="0-2" value="0-2">
 
@@ -44,7 +43,7 @@
                 <p></p>
                 <label><h6><b>Willing To Relocate</b></h6></label>
                 <br>
-                <div id="radio-group">
+                <div class="radio-group">
 
                     <input name="relocate" type="radio"  id="yes" value="Yes">
 
@@ -60,11 +59,10 @@
                 </div>
                 <div class="form-group">
                     <label></label>
-
-
                     <button class="btn btn-primary" id="myButton" type="submit">Next</button>
                 </div>
             </div>
+
             </form>
 </div>
 </body>
