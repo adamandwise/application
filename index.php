@@ -6,6 +6,11 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 
 session_start();
+//<!--Adam Wise
+//SDEV 328 Full Stack Development
+//1.21.23
+//Job Application1
+//-->
 //require the autoload file
 require_once('vendor/autoload.php');
 
@@ -50,6 +55,7 @@ $f3 -> route('GET|POST /experience', function($f3){
         $_SESSION['bio'] = $_POST['bio'];
         $_SESSION['exp'] = $_POST['radio-group'];
         $_SESSION['relocate'] = $_POST['relocate'];
+        $_SESSION['gitHub'] = $_POST['gitHub'];
 
 
         $f3->reroute('mailing_list');
