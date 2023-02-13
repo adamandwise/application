@@ -22,12 +22,23 @@ Job Application1
                             <div class="form-group">
                                 <label for="fname">First Name:</label>
                                 <input name="fname" type="text" class="form-control" id="fname">
+
+                                <p></p>
+                                <check if="{{ isset(@errors['fname']) }}">
+                                    <span class="err">{{ @errors['fname'] }}</span>
+                                </check>
+
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="lname">Last Name:</label>
                                 <input name="lname" type="text" class="form-control" id="lname">
+
+                                <p></p>
+                                <check if="{{ isset(@errors['lname']) }}">
+                                    <span class="err">{{ @errors['lname'] }}</span>
+                                </check>
                             </div>
                         </div>
                     </div>
@@ -35,7 +46,12 @@ Job Application1
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input name="email" type="email" class="form-control" id="email">
+                                <input name="email" type="text" class="form-control" id="email">
+
+                                <p></p>
+                                <check if="{{ isset(@errors['email']) }}">
+                                    <span class="err">{{ @errors['email'] }}</span>
+                                </check>
                             </div>
                         </div>
                     </div>
@@ -116,8 +132,13 @@ Job Application1
                     <div class="form-group">
 
                         <label for="phone">Phone:</label>
-                        <input name="phone" type="tel" class="form-control" id="phone"
+                        <input name="phone" type="text" class="form-control" id="phone"
                                pattern="[0-9]{3}-[0-9]{3]-[0-9]{4}" required placeholder="555-555-5555">
+
+                        <p></p>
+                        <check if="{{ isset(@errors['phone']) }}">
+                            <span class="err">{{ @errors['phone'] }}</span>
+                        </check>
 
                     </div>
 

@@ -16,7 +16,7 @@ Job Application1
         <div class="row">
             <div class="col-3">
                 <form action="#" method="post">
-                <input type="checkbox" id="javascript" name="javascript"   value="JavaScript">
+                <input type="checkbox" id="javascript" name="mail[]"   value="JavaScript">
                 <label for="javascript"> Javascript</label>
             </div>
             <div class="col-3">
@@ -47,8 +47,20 @@ Job Application1
             <div class="col-3">
                 <input type="checkbox" id="node" name="mail[]" value="NodeJs">
                 <label for="node">NodeJs</label>
-
             </div>
+            <!--
+            <form action="#" method="post">
+                <repeat group="{{@mailing}}" value="{{@mail}}">
+                    <div class="col-3">
+                        <label><input type="checkbox"  name="mail"  value="{{@mail}}">{{ucfirst(@mail)}}</label>
+                    </div>
+                </repeat>
+            -->
+
+            <p></p>
+            <check if="{{ isset(@errors['mail']) }}">
+                <span class="err">{{ @errors['mail'] }}</span>
+            </check>
         </div>
         <div  class="row">
             <p></p>
@@ -57,28 +69,28 @@ Job Application1
         <div class="row">
             <div class="col-3">
 
-                <input type="checkbox" id="saas" name="mail[]"   value="SaaS">
+                <input type="checkbox" id="saas" name="vertical[]"   value="SaaS">
                 <label for="saas"> SaaS</label>
             </div>
             <div class="col-3">
-                <input type="checkbox" id="healthtech" name="mail[]"   value="Health Tech">
+                <input type="checkbox" id="healthtech" name="vertical[]"   value="Health Tech">
                 <label for="healthtech"> Health Tech</label>
             </div>
             <div class="col-3">
-                <input type="checkbox" id="agtech" name="mail[]"   value="Ag Tech">
+                <input type="checkbox" id="agtech" name="vertical[]"   value="Ag Tech">
                 <label for="agtech"> Ag Tech</label>
             </div>
             <div class="col-3">
-                <input type="checkbox" id="hrtech" name="mail[]"   value="HR Tech">
+                <input type="checkbox" id="hrtech" name="vertical[]"   value="HR Tech">
                 <label for="hrtech"> HR tech</label>
             </div>
             <p></p>
             <div class="col-3">
-                <input type="checkbox" id="industrialtech" name="mail[]" value="Industrial Tech">
+                <input type="checkbox" id="industrialtech" name="vertical[]" value="Industrial Tech">
                 <label for="industrialtech">Industrial Tech</label>
             </div>
             <div class="col-3">
-                <input type="checkbox" id="cybersec" name="mail[]" value="Cyber Security">
+                <input type="checkbox" id="cybersec" name="vertical[]" value="Cyber Security">
                 <label for="cybersec">Cyber Security</label>
 
             </div>

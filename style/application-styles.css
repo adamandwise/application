@@ -40,7 +40,7 @@ img.round_corners{
     border-radius: 30px;
 }
 /*
-a style the italicizes my blockquote tag
+a style.css the italicizes my blockquote tag
 */
 blockquote{
     font-style:italic;
@@ -144,4 +144,10 @@ textarea{
     width: 100%;
     height: 89%;
 
+}
+
+
+
+.err{
+    color:darkred;
 }

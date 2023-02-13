@@ -18,7 +18,10 @@ Job Application1
             <div class="col-8">
                 <label for="bio"><h6><b>Biography</b></h6></label>
                 <textarea id="bio" name="bio"></textarea>
-
+                <p></p>
+                <check if="{{ isset(@errors['bio']) }}">
+                    <span class="err"> {{ @errors['bio'] }}</span>
+                </check>
             </div>
 
 
@@ -27,40 +30,68 @@ Job Application1
                 <label for="gitHub"><h6><b>Github Link</b></h6></label>
                 <br>
                 <input name="gitHub" type="text" class="form-control" id="gitHub" value="github.com/my_github">
+
+                <p></p>
+                <check if="{{ isset(@errors['gitHub']) }}">
+                    <span class="err"> {{ @errors['gitHub'] }}</span>
+                </check>
                 <p></p>
 
                 <label><h6><b>Years Experience</b></h6></label>
                 <br>
+
+
                 <div class="radio-group">
 
-                    <input name="radio-group" type="radio"  id="0-2" value="0-2">
+                    <repeat group="{{@xp}}" value="{{@exp}}">
+                        <label><input type="radio" name="exp" value="{{@exp}}"> {{@exp}}&nbsp;</label>
+                    </repeat>
+
+
+                <!--
+                    <input name="radio-group[]" type="radio"  id="0-2" value="0-2">
 
                     <label for="0-2">&nbsp;0-2&nbsp;&nbsp;</label>
 
 
-                    <input name="radio-group" type="radio"  id="2-4" value="2-4">
+                    <input name="radio-group[]" type="radio"  id="2-4" value="2-4">
                     <label for="2-4">&nbsp;2-4&nbsp;&nbsp;</label>
 
 
-                    <input name="radio-group" type="radio"  id="4+"  value="4+">
+                    <input name="radio-group[]" type="radio"  id="4+"  value="4+">
                     <label for="4+">&nbsp;4+&nbsp;&nbsp;</label>
+                    -->
+
+                    <p></p>
+                    <check if="{{ isset(@errors['exp']) }}">
+                        <span class="err">{{@errors['exp'] }} </span>
+
+                    </check>
                 </div>
+
                 <p></p>
                 <label><h6><b>Willing To Relocate</b></h6></label>
                 <br>
                 <div class="radio-group">
 
-                    <input name="relocate" type="radio"  id="yes" value="Yes">
+                    <repeat group="{{@relo}}" value="{{@relocate}}">
+                        <label><input type="radio" name="relocate" value="{{@relocate}}"> {{@relocate}}&nbsp;</label>
+                    </repeat>
 
+                    <!--
+                    <input name="relocate[]" type="radio"  id="yes" value="Yes">
                     <label for="yes">&nbsp;Yes&nbsp;&nbsp;</label>
 
-
-                    <input name="relocate" type="radio"  id="no" value="No">
+                    <input name="relocate[]" type="radio"  id="no" value="No">
                     <label for="no">&nbsp;No&nbsp;&nbsp;</label>
 
-
-                    <input name="relocate" type="radio"  id="maybe"  value="Maybe">
+                    <input name="relocate[]" type="radio"  id="maybe"  value="Maybe">
                     <label for="maybe">&nbsp;Maybe&nbsp;&nbsp;</label>
+                    -->
+                    <p></p>
+                    <check if="{{ isset(@errors['relocate']) }}">
+                        <span class="err">{{ @errors['exp'] }}</span>
+                    </check>
                 </div>
                 <div class="form-group">
                     <label></label>
