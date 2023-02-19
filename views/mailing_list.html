@@ -10,14 +10,14 @@ Job Application1
             <p></p>
             <h3>Job Openings Mailing Lists</h3>
             <hr>
-            <h6>Software Development Jobs</h6>
+                <h6>Software Development Jobs</h6>
             </div>
         </div>
         <div class="row">
             <div class="col-3">
                 <form action="#" method="post">
-                <input type="checkbox" id="javascript" name="mail[]"   value="JavaScript">
-                <label for="javascript"> Javascript</label>
+                    <input type="checkbox" id="javascript" name="mail[]"   value="JavaScript">
+                    <label for="javascript"> Javascript</label>
             </div>
             <div class="col-3">
                 <input type="checkbox" id="php" name="mail[]"   value="PHP">
@@ -94,6 +94,10 @@ Job Application1
                 <label for="cybersec">Cyber Security</label>
 
             </div>
+            <p></p>
+            <check if="{{ isset(@errors['vertical']) }}">
+                <span class="err">{{ @errors['vertical'] }}</span>
+            </check>
         </div>
 
         <div class="row">

@@ -178,23 +178,35 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
 
 
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        /*
-        $mail = $_POST['mail'];
-        if(validSelectionsJobs($mail)){
-            $_SESSION['mail'] = $mail;
-        }else{
-            $f3->set('errors["mail"]','Please choose a mailing list');
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        if (isset($_POST['mail'])) {
+
+        $mail = ($_POST['mail']);
+        if (validSelectionsJobs($mail)) {
+            //$_SESSION['mail'] = $mail;
+            $_SESSION['mail'] = implode(", ", $mail);
+        } else {
+            $f3->set('errors["mail"]', 'Please choose a job from the mailing list');
         }
+    }
 
-        $vertical =  $_POST['vertical'];
-        if(validSelectionsVerticals($vertical)){
-            $_SESSION['vertical'] = $vertical;
-        }else{
-            $f3->set('errors["vertical"]','Please choose a vertical from the list');
-        }*/
+    if(isset($_POST['vertical'])) {
+        $vertical = ($_POST['vertical']);
+        if (validSelectionsVerticals($vertical)) {
+            //$_SESSION['vertical'] = $vertical;
+            $_SESSION['vertical'] = implode(", ", $vertical);
 
-        //$_SESSION['mail'] = implode(". ", $_POST['mail']);
+        } else {
+            $f3->set('errors["vertical"]', 'Please choose a vertical from the list');
+        }
+    }
+        // $_SESSION['mail'] = implode(", ", $_POST['mail']);
+        //$_SESSION['vertical'] = implode(", ", $_POST['vertical']);
+
+        if(empty($f3->get('errors'))){
+            $f3->reroute('summary');
+        }
 
         //redirect to summary page
         $f3->reroute('summary');
@@ -206,7 +218,10 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
     $view = new Template();
     echo $view -> render('views/mailing_list.html');
 });
-$f3 -> route('GET /summary', function(){
+$f3 -> route('GET /summary', function($f3){
+
+    var_dump($_SESSION['mail']);
+    var_dump($_SESSION['vertical']);
     //instantiate a view
     $view = new Template();
     echo $view -> render('views/summary.html');
