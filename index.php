@@ -183,7 +183,7 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
         if (isset($_POST['mail'])) {
 
         $mail = ($_POST['mail']);
-        if (validSelectionsJobs($mail)) {
+        if(validSelectionsJobs($mail)){
             //$_SESSION['mail'] = $mail;
             $_SESSION['mail'] = implode(", ", $mail);
         } else {
@@ -193,7 +193,7 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
 
     if(isset($_POST['vertical'])) {
         $vertical = ($_POST['vertical']);
-        if (validSelectionsVerticals($vertical)) {
+        if(validSelectionsVerticals($vertical)){
             //$_SESSION['vertical'] = $vertical;
             $_SESSION['vertical'] = implode(", ", $vertical);
 

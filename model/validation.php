@@ -72,13 +72,13 @@
     function validSelectionsJobs($mail)
     {
 
-        foreach($mail as $mail_item){
-                if(!in_array($mail_item,getMail())){
-                    return false;
-                }else{
-                    return true;
-                }
+        foreach ($mail as $mail_item) {
+            if (!in_array($mail_item, getMail())) {
+                return false;
             }
+
+        }
+        return true;
     }
 
     //checks to validate that the values assocaited with the mail array are correct
@@ -87,9 +87,6 @@
         foreach($vertical as $vertical_item){
             if(!in_array($vertical_item,getVert())){
                 return false;
-            }
-            else{
-                return true;
             }
         }
         return true;
