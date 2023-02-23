@@ -176,7 +176,8 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
     // need to work it out and fix my repeats on the html summary as well
     //generally kind of los ton this one
 
-
+    $f3->set('mailing',getMail());
+    $f3->set('vert',getVert());
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -211,8 +212,6 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
         //redirect to summary page
         $f3->reroute('summary');
     }
-    $f3->set('mailing',getMail());
-    $f3->set('vert',getVert());
 
     //instantiate a view
     $view = new Template();
@@ -225,6 +224,10 @@ $f3 -> route('GET /summary', function($f3){
     //instantiate a view
     $view = new Template();
     echo $view -> render('views/summary.html');
+
+
+    //destroy the session
+    session_destroy();
 });
 
 
