@@ -1,23 +1,27 @@
 <?php
+class DataLayer
+{
 
-    function getMail()
+
+    static function getMail()
     {
 
 
-        return array("JavaScript","PHP","Java","Python","HTML","CSS","ReactJs", "NodeJs");
+        return array("JavaScript", "PHP", "Java", "Python", "HTML", "CSS", "ReactJs", "NodeJs");
     }
 
-    function getVert()
+    static function getVert()
     {
-        return array("SaaS","Health Tech","Ag Tech","HR Tech","Industrial Tech","Cyber Security");
+        return array("SaaS", "Health Tech", "Ag Tech", "HR Tech", "Industrial Tech", "Cyber Security");
     }
 
-    function getExp()
+    static function getExp()
     {
-        return array("0-2","2-4","4+");
+        return array("0-2", "2-4", "4+");
     }
 
-    function getRelocate()
+    static function getRelocate()
     {
-        return array("Yes","No","Maybe");
+        return array("Yes", "No", "Maybe");
     }
+}
