@@ -1,0 +1,77 @@
+<!--Adam Wise
+SDEV 328 Full Stack Development
+1.21.23
+Job Application1
+--><include href="views/header.html"></include>
+<div class="row background2">
+    <p></p>
+    <p></p>
+    <div class="row">
+
+        <div class="col-6">
+            <div class="row">
+                <div class="border">
+                    <p>Name: {{@SESSION['newApp']->getFName()}} {{@SESSION.newApp -> getLName()}}</p>
+                    <hr>
+                    <p>Email: {{@SESSION.newApp->getEmail()}}</p>
+                    <hr>
+                    <p>State: {{@SESSION.newApp->getState()}} </p>
+                    <hr>
+                    <p>Phone: {{@SESSION.newApp -> getPhone()}} </p>
+                    <hr>
+                    <p>Github Link: {{@SESSION.newApp -> getGitHub()}} </p>
+                    <hr>
+                    <p>Experience: {{@SESSION.newApp -> getExp()}}</p>
+                    <hr>
+                    <p>Willing To Relocate: {{@SESSION.newApp -> getRelocate()}} </p>
+                    <hr>
+                    <p>Mailing List: {{@SESSION.newApp->getJobs()}}  {{@SESSION.newApp->getVertical()}}</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-6 ">
+            <img src="images/green_guy.jpg" alt="silhoutte of a computer programmer" class="programmers">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <p></p>
+        </div>
+        <div class="col-6">
+            <p></p>
+            <h3>Summary</h3>
+            <p>{{@SESSION.newApp->getBio()}}</p>
+        </div>
+    </div>
+    <!-- This code centers the submit button to the bottom of the page-->
+    <div class="row">
+        <div class="col-4  ">
+            <div class="form-group">
+                <label for="state"></label>
+                <input name="state" type="text" hidden class="form-control" id="state">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label></label>
+                <a role="button" class="btn btn-primary" id="myButton"
+                   href="home"> Submit My Application! </a>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group hidden">
+                <label for="phone"></label>
+                <input name="phone" type="tel"  hidden class="form-control" id="phone">
+                <br>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

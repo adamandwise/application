@@ -1,6 +1,4 @@
 <?php
-
-
 // turn on reporting errors
 ini_set('display_errors',1);
 error_reporting(E_ALL);
@@ -29,24 +27,45 @@ $f3 -> route('GET /', function(){
     $GLOBALS['con']->home();
 });
 
-
-$f3 -> route('GET|POST /personal_info', function($f3){
-    $GLOBALS['con']->personal_info();
-});
-
+//define a home route same as the on up above made this for convenience with my nav bar
 $f3 -> route('GET /home', function(){
     $GLOBALS['con']->home();
 });
 
+////define route for personal info page
+$f3 -> route('GET|POST /personal_info', function($f3){
+    $GLOBALS['con']->personal_info();
+});
+
+//define route for experience page
 $f3 -> route('GET|POST /experience', function($f3) {
     $GLOBALS['con']->experience();
+    //var_dump($_SESSION['newApp']);
 });
-$f3 -> route('GET|POST /mailing_list', function($f3){
-    $GLOBALS['con']->mailinglist();
-});
-$f3 -> route('GET /summary', function($f3){
 
+//define route for mailing list
+$f3 -> route('GET|POST /mailing_list', function($f3){
+    if(isset($_SESSION['skip'])){
+        $GLOBALS['con']->summary();
+        //var_dump($_SESSION['newApp']);
+
+    }else{
+        $GLOBALS['con']->mailinglist();
+        //var_dump($_SESSION['newApp']);
+    }
+
+});
+
+//define route for summary page
+$f3 -> route('GET /summary', function($f3){
     $GLOBALS['con']->summary();
+    //var_dump($_SESSION['newApp']);
+});
+
+// seperate route for mailing list applicaitons
+$f3 -> route('GET /summary_', function($f3){
+    $GLOBALS['con']->summary_();
+    //var_dump($_SESSION['newApp']);
 });
 
 

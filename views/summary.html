@@ -11,22 +11,19 @@ Job Application1
             <div class="col-6">
                 <div class="row">
                     <div class="border">
-                        <p>Name: {{@SESSION.fname}} {{@SESSION.lname}}</p>
+                        <p>Name: {{@SESSION['newApp']->getFName()}} {{@SESSION.newApp -> getLName()}}</p>
                     <hr>
-                        <p>Email: {{@SESSION.email}}</p>
+                        <p>Email: {{@SESSION.newApp->getEmail()}}</p>
                     <hr>
-                        <p>State: {{@SESSION.state}} </p>
+                        <p>State: {{@SESSION.newApp->getState()}} </p>
                     <hr>
-                        <p>Phone: {{@SESSION.phone}} </p>
+                        <p>Phone: {{@SESSION.newApp -> getPhone()}} </p>
                     <hr>
-                        <p>Github Link: {{@SESSION.gitHub}} </p>
+                        <p>Github Link: {{@SESSION.newApp -> getGitHub()}} </p>
                     <hr>
-                        <p>Experience: {{@SESSION.exp}}</p>
+                        <p>Experience: {{@SESSION.newApp -> getExp()}}</p>
                     <hr>
-                        <p>Willing To Relocate: {{@SESSION.relocate}} </p>
-                    <hr>
-                        <p>Mailing List: {{@SESSION.mail}}  {{@SESSION.vertical}}</p>
-
+                        <p>Willing To Relocate: {{@SESSION.newApp -> getRelocate()}} </p>
 
                     </div>
                 </div>
@@ -42,7 +39,7 @@ Job Application1
             <div class="col-6">
                 <p></p>
                 <h3>Summary</h3>
-                <p>{{@SESSION.bio}}</p>
+                <p>{{@SESSION.newApp->getBio()}}</p>
             </div>
         </div>
         <!-- This code centers the submit button to the bottom of the page-->
