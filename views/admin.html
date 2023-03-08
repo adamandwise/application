@@ -1,0 +1,40 @@
+<!--Adam Wise
+SDEV 328 Full Stack Development
+1.21.23
+Job Application1
+--><include href="views/header.html"></include>
+<div class="row background2">
+    <div class="col-3">
+        <h1>Admin</h1>
+        <button id="btn"> Submit </button>
+    </div>
+
+
+    <script src="//code.jquery.com/jquery.js"></script>
+    <div>
+        <label>Enter applicant ID: <input type="text" id="num"></label>
+
+
+    </div>
+    <div>
+        <div id="output"></div>
+
+    </div>
+    <script>
+        $("#btn").on("click",function(){
+            $("#output").load("submit.php");
+
+        });
+    </script>
+
+
+</div>
+
+</div>
+
+
+</div>
+</body>
+
+
+</html>

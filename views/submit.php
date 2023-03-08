@@ -1,30 +1,22 @@
-<include href="views/header.html"></include>
-<body>
-
-
 <?php
-    // creating variables in php to vardump my form
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $dob = $_POST['dob'];
-    $address = $_POST['address'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $zip = $_POST['zip'];
-    $state = $_POST['state'];
-    $sex = $_POST['sex'];
-    $resume = $_POST['resume'];
-    $coverLetter = $_POST['coverLetter'];
+require $_SERVER['DOCUMENT_ROOT'].'/../config.php';
 
-    echo "<p>Thank you $name for applying</p>";
-echo "<p>Email: $email </p>";
-echo "<p>Date of Birth: $dob  </p>";
-echo "<p>Address: $address  </p>";
-echo "<p>City: $city  </p>";
-echo "<p>State:$state  ";
-echo "<p>Zip: $zip  ";
-echo "<p>Sex: $sex";
-?>
+try{
+    //Instantiate a database object
+    $this->_dbh = new PDO ( DB_DSN, DB_USERNAME, DB_PASSWORD );
+}
+catch (PDOException $e) {
+    echo $e->getMessage();
+}
 
-</body>
-</html>
+//define the query
+$sql = "SELECT * FROM applicant";
+//2.prepare the statement
+$statement = $this->_dbh -> prepare($sql);
+//3.bind the parameters
+
+//4.execute the statement
+$statement->execute();
+
+//5.process the result
+return $statement->fetchAll(PDO::FETCH_ASSOC);

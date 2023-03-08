@@ -40,11 +40,12 @@ class Controller
             {
                 //then we will make the applicant class for subscribed
                 $newApp = new Applicant_SubscribedToLists($fname, $lname, $email, $state, $phone);
-
+                //$_SESSION['sub'] = 1;
             }else
             {
                 $newApp = new Applicant($fname, $lname, $email, $state, $phone);
                 $_SESSION['skip'] = 'skip';
+               // $_SESSION['sub'] = 0;
             }
             //validation firstname
             $fname = trim($_POST['fname']);
@@ -211,15 +212,19 @@ class Controller
      */
     function summary()
     {
-        //var_dump($_SESSION['mail']);
-        //var_dump($_SESSION['vertical']);
+
+
         //instantiate a view
         $view = new Template();
         echo $view -> render('views/summary.html');
 
+        var_dump($_SESSION['newApp']);
+        $id = $GLOBALS['dataLayer']->insertApplicant($_SESSION['newApp']);
+        echo " Applicant ID:$id ";
+
 
         //destroy the session
-        session_destroy();
+       session_destroy();
     }
 
     /**this version of the summary page only displays if the user selects for mailing lists, essentialy the same but it
@@ -228,15 +233,29 @@ class Controller
      */
     function summary_()
     {
-        //var_dump($_SESSION['mail']);
-        //var_dump($_SESSION['vertical']);
+
         //instantiate a view
         $view = new Template();
         echo $view -> render('views/summary_.html');
 
+        var_dump($_SESSION['newApp']);
+        $id = $GLOBALS['dataLayer']->insertApplicant($_SESSION['newApp']);
+        echo " Applicant ID:$id ";
+
 
         //destroy the session
         session_destroy();
+    }
+
+    function admin(){
+
+
+        $applicant = $GLOBALS['dataLayer']->getApplicants();
+        $this->_f3-> set('applicant', $applicant);
+
+        $view = new Template();
+
+        echo $view -> render("views/admin.html");
     }
 
 }

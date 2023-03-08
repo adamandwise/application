@@ -22,6 +22,9 @@ $f3 = Base::instance();
 //instantiate a controller class
 $con = new Controller($f3);
 
+//instantiate a new datalayer class
+$dataLayer = new DataLayer();
+
 //define a default route(328/application) with anonymous function
 $f3 -> route('GET /', function(){
     $GLOBALS['con']->home();
@@ -59,15 +62,19 @@ $f3 -> route('GET|POST /mailing_list', function($f3){
 //define route for summary page
 $f3 -> route('GET /summary', function($f3){
     $GLOBALS['con']->summary();
-    //var_dump($_SESSION['newApp']);
+
 });
 
 // seperate route for mailing list applicaitons
 $f3 -> route('GET /summary_', function($f3){
     $GLOBALS['con']->summary_();
-    //var_dump($_SESSION['newApp']);
+
 });
 
+$f3 -> route('GET /admin', function($f3){
+    $GLOBALS['con']->admin();
+
+});
 
 //run fat free
 $f3->run();
