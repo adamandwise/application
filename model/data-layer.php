@@ -44,7 +44,7 @@ class DataLayer
         $bio = $applicant->getBio();
         if($applicant instanceof Applicant_SubscribedToLists){
             $mailing_list_signup = 1;
-            $mailing_lists_subscriptions=  null;
+            $mailing_lists_subscriptions=  $applicant->getJobs().",".$applicant->getVertical();
 
         }else{
             $mailing_list_signup = 0;
@@ -67,15 +67,17 @@ class DataLayer
         $statement->execute();
 
         //5.process the result
+        var_dump($statement->errorInfo());
         $id = $this->_dbh->lastInsertId();
         return $id;
 
     }
 
+
     function getApplicants()
     {
         //define the query
-        $sql = "SELECT * FROM applicant";
+        $sql = "SELECT * FROM applicant ORDER BY lname ASC ";
         //2.prepare the statement
         $statement = $this->_dbh -> prepare($sql);
         //3.bind the parameters
@@ -84,23 +86,49 @@ class DataLayer
         $statement->execute();
 
         //5.process the result
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+         return  $statement->fetchAll(PDO::FETCH_ASSOC);
+
     }
 
-    function getApplicant($applicant_id)
+    function getApplicant($app_id)
     {
         //define the query
-        $sql = "SELECT applicant_id FROM applicant WHERE";
+        $sql = "SELECT * FROM applicant WHERE applicant_id = :id ORDER BY lname ASC";
         //2.prepare the statement
         $statement = $this->_dbh -> prepare($sql);
         //3.bind the parameters
+
+        $statement->bindParam(':id',$app_id);
 
         //4.execute the statement
         $statement->execute();
 
         //5.process the result
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $row =  $statement->fetch(PDO::FETCH_ASSOC);
+        echo $row['applicant_id'].', '.$row['fname'].", ".$row['lname'];
     }
+
+    function getSubscriptions($app_id)
+    {
+        //define the query
+        $sql = "SELECT mailing_lists_subscriptions FROM applicant WHERE applicant_id = :id ORDER BY lname ASC";
+        //2.prepare the statement
+        $statement = $this->_dbh -> prepare($sql);
+        //3.bind the parameters
+
+        $statement->bindParam(':id',$app_id);
+
+        //4.execute the statement
+        $statement->execute();
+
+        //5.process the result
+
+        $row =  $statement->fetch(PDO::FETCH_ASSOC);
+        echo "<br>"."App ID: $app_id subscribes to these mailing lists: ".$row['mailing_lists_subscriptions'];
+    }
+
 
     //these methods are all related to validation
 

@@ -212,16 +212,12 @@ class Controller
      */
     function summary()
     {
-
-
         //instantiate a view
         $view = new Template();
         echo $view -> render('views/summary.html');
 
-        var_dump($_SESSION['newApp']);
         $id = $GLOBALS['dataLayer']->insertApplicant($_SESSION['newApp']);
         echo " Applicant ID:$id ";
-
 
         //destroy the session
        session_destroy();
@@ -233,12 +229,11 @@ class Controller
      */
     function summary_()
     {
-
         //instantiate a view
         $view = new Template();
         echo $view -> render('views/summary_.html');
 
-        var_dump($_SESSION['newApp']);
+        //var_dump($_SESSION['newApp']);
         $id = $GLOBALS['dataLayer']->insertApplicant($_SESSION['newApp']);
         echo " Applicant ID:$id ";
 
@@ -248,10 +243,12 @@ class Controller
     }
 
     function admin(){
+        //just testing the other functions
+        $GLOBALS['dataLayer']->getApplicant(2);
+        $GLOBALS['dataLayer']->getSubscriptions(4);
+        $applicants = $GLOBALS['dataLayer']->getApplicants();
+        $this->_f3-> set('applicants', $applicants);
 
-
-        $applicant = $GLOBALS['dataLayer']->getApplicants();
-        $this->_f3-> set('applicant', $applicant);
 
         $view = new Template();
 

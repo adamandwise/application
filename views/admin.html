@@ -6,30 +6,44 @@ Job Application1
 <div class="row background2">
     <div class="col-3">
         <h1>Admin</h1>
-        <button id="btn"> Submit </button>
     </div>
 
+    <div class="col">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
 
-    <script src="//code.jquery.com/jquery.js"></script>
-    <div>
-        <label>Enter applicant ID: <input type="text" id="num"></label>
+                <th>Email</th>
+                <th>State</th>
+                <th>Phone</th>
+                <th>GitHub</th>
+                <th>Experience</th>
+                <th>Bio</th>
+                <th>Mailing List Subscriber</th>
+                <th>Mailing List Subscriptions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <repeat group="{{ @applicants }}" value="{{ @applicant }}">
+                <tr>
+                    <td>{{ @applicant ['applicant_id'] }}</td>
+                    <td>{{ @applicant['fname'] }}&nbsp;{{ @applicant['lname'] }}</td>
 
-
+                    <td>{{ @applicant['email'] }}</td>
+                    <td>{{ @applicant['state'] }}</td>
+                    <td>{{ @applicant['phone'] }}</td>
+                    <td>{{ @applicant['github'] }}</td>
+                    <td>{{ @applicant['experience'] }}</td>
+                    <td>{{ @applicant['bio'] }}</td>
+                    <td>{{ @applicant['mailing_list_signup'] }}</td>
+                    <td>{{ @applicant['mailing_lists_subscriptions'] }}</td>
+                </tr>
+            </repeat>
+            </tbody>
+        </table>
     </div>
-    <div>
-        <div id="output"></div>
-
-    </div>
-    <script>
-        $("#btn").on("click",function(){
-            $("#output").load("submit.php");
-
-        });
-    </script>
-
-
-</div>
-
 </div>
 
 
